@@ -1,0 +1,24 @@
+{
+  "name": "ramses-iii",
+  "version": "4.2.0",
+  "description": "pattern",
+  "main": "src/index.js",
+  "scripts": {
+    "ayy": "node ./node_modules/webpack/bin/webpack.js",
+    "lmao": "./node_modules/webpack-dev-server/bin/webpack-dev-server.js --content-base=app/",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Matt Owen",
+  "license": "UNLICENSED",
+  "homepage": "http://irl.xn--q9jyb4c/",
+  "devDependencies": {
+    "babel-core": "^6.14.0",
+    "babel-loader": "^6.2.10",
+    "babel-preset-env": "^1.6.1",
+    "webpack": "^1.13.2",
+    "webpack-dev-server": "^1.15.1"
+  },
+  "dependencies": {
+    "web3": "^1.0.0-beta.26"
+  }
+}

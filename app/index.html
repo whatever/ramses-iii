@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="jp">
+  <head>
+    <title>you know</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        font-size: 14pt;
+        background-color: #EFEFEF;
+      }
+
+      .plot {
+        border: solid 1px black;
+        width: 200px;
+        height: 200px;
+        display: inline-block;
+        cursor: pointer;
+        background-color: white;
+        user-select: none;
+      }
+
+      .plot:hover {
+        background-color: aqua;
+      }
+    </style>
+    <script src="/assets/ramses3.bundled.js"></script>
+  </head>
+  <body>
+    <h3>Quit when you're not ahead... wait</h3>
+    <div id="graveyard">
+      <div id="row-1">
+        <div class="plot" id="here"></div>
+        <div class="plot"></div>
+        <div class="plot"></div>
+      </div>
+      <div id="row-2">
+        <div class="plot"></div>
+        <div class="plot"></div>
+        <div class="plot"></div>
+      </div>
+    </div>
+    <script>
+        document.getElementById("here").addEventListener('click', function () {
+          console.log("aight");
+        });
+
+        if (typeof web3 !== 'undefined') {
+          web3 = new Web3(web3.currentProvider);
+        } else {
+          web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
+        }
+    </script>
+  </body>
+</html>

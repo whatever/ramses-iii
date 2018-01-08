@@ -40,15 +40,31 @@
       </div>
     </div>
     <script>
-        document.getElementById("here").addEventListener('click', function () {
-          console.log("aight");
-        });
+      document.getElementById("here").addEventListener('click', function () {
+        console.log("aight");
+      });
+
+      window.addEventListener('load', function() {
+
+        function complainAboutNotHavingMetaMask() {
+          alert("Get metamask!");
+        }
 
         if (typeof web3 !== 'undefined') {
           web3 = new Web3(web3.currentProvider);
         } else {
-          web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
+          complainAboutNotHavingMetaMask();
         }
+
+        // Get accounts on this machine
+        web3.eth.getAccounts(function (err, results) {
+          if (err) {
+            console.log("Get accounts failed with: ", err);
+            return;
+          }
+          console.log(err, results);
+        });
+      });
     </script>
   </body>
 </html>
